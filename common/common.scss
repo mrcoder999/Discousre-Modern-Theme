@@ -1555,3 +1555,33 @@ div.login-required {
 .static-progress-bar .progress-bar-background, .static-progress-bar .progress-bar-background .progress-bar {
   border-radius:8px;
 }
+
+.extra-info-wrapper .topic-link {
+  color: #cecece;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+.alert {
+  margin: 0.1em;
+}
+
+
+.full-width .contents .topic-list .topic-list-body .topic-list-item .posters .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px !important;
+}
+
+img.avatar {
+  border-radius: 60px !important;
+}
+
+
+.user-menu .quick-access-panel li:hover {
+  background-color: #59697c;
+  outline: none;
+}
