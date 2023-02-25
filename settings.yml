@@ -22,12 +22,32 @@ Background_Type:
   description: "Choose to have your custom background scaled to fit, or tiled"
   
 Tile_Size:
-   default: 350
-   description: "Size for the tile background type. Will only work if Background Type is set to tile."
-   type: integer
+   default: "150px"
+   description: "Size for the tile background type. Will only work if Background Type is set to tile. WARNING: You must include 'px' at the end of it, or it wont work!"
+   type: string
    
  
 Staff_tag:
    default: true
-   description: "Enables Staff tag. WARNING: NOT COMPATIBLE WITH USER STATUSES"
+   description: "Enables Staff tag next to admins and moderators."
    type: bool
+
+Header_Color_1:
+   default: "#202020"
+   description: "1st Color in the header gradient."
+   type: string
+
+Header_Color_2:
+   default: "#353535"
+   description: "Second Color in the header gradient."
+   type: string
+
+Header_Color_3:
+   default: "#454545"
+   description: "Third Color in the header gradient."
+   type: string
+
+Header_Direction:
+   default: "90deg"
+   type: string
+   description: "Direction the header is in, in degrees. ONLY Type [number]deg, anything else will break it!"
