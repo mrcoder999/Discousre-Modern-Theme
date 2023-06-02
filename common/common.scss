@@ -295,7 +295,19 @@ pre code {
   background-color: #0f0f0f !important;
 }
 
+/* Fix the glitchy af badges */
+.user-card .badge-section {
+  border-radius: 8px;
 
+  .user-card-badge-link,
+  .more-user-badges {
+    border: 0px;
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+}
 
 .badge-wrapper.box {
   border-radius: 0.25em;
@@ -329,7 +341,15 @@ pre code {
   background-color: #67ffb2;
 }
 
+.user-card {
+  .badge-section {
 
+    .user-badge,
+    .more-user-badges a {
+      border-radius: 16px;
+    }
+  }
+}
 
 .modal-inner-container {
   border-radius: 9px;
@@ -390,6 +410,7 @@ div.ac-wrap {
 
 .badge-card,
 .reviewable-filters,
+.user-card.show,
 .group-card.show {
   border-radius: 14px;
 }
@@ -476,6 +497,15 @@ div.ac-wrap {
   -webkit-backdrop-filter: blur(10rem);
 }
 
+.user-card.show,
+.group-card.show,
+.user-card .card-content,
+.group-card .card-content {
+  border-radius: 12px;
+  background-color: rgba(36, 36, 36, 0.21);
+  backdrop-filter: blur(2rem);
+  -webkit-backdrop-filter: blur(2rem);
+}
 
 .menu-panel {
 
@@ -895,8 +925,25 @@ svg.PixlzThemeSearchIcon {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   }
 
+  .user-card-container {
+    margin: 60px 20px;
+    width: 100%;
+    background-color: var(--secondary);
+    box-shadow: none;
+    margin-bottom: auto;
+  }
 
+  .user-card {
+    z-index: auto;
+    position: relative;
+    width: 100%;
+    box-shadow: none;
+    margin: 0;
 
+    .badge-section {
+      overflow: hidden;
+    }
+  }
 
   .usercard-controls {
     display: none;
@@ -933,6 +980,8 @@ svg.PixlzThemeSearchIcon {
     display: grid;
   }
 
+  .user-card-directory .user-card-container {
+    margin: 0;
   }
 }
 
@@ -989,7 +1038,20 @@ discourse you really gotta fix your search system
   }
 }
 
+.user-card-avatar,
+.user-profile-avatar {
+  .avatar-flair {
+    &.rounded {
+      background-color: rgba(255, 255, 255, 0);
+      bottom: -20px;
+      right: -23px;
+    }
 
+    .fa {
+      right: -20px;
+    }
+  }
+}
 
 .topic-body .topic-meta-data {
   right: -5px;
@@ -1521,7 +1583,10 @@ div.edit-category {
   border-radius: 8px;
 }
 
-
+.user-card-avatar .avatar-flair.rounded,
+.user-profile-avatar .avatar-flair.rounded {
+  background: transparent;
+}
 
 #simple-container {
   background: transparent;
@@ -1585,7 +1650,12 @@ div.login-required {
   border-radius: 18px;
 }
 
-
+.user-card.show,
+.group-card.show,
+.user-card .card-content,
+.group-card .card-content {
+  left: 0px !important;
+}
 
 .select-kit.is-expanded .select-kit-body {
   position: absolute !important
