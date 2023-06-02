@@ -650,44 +650,4 @@ body.wizard {
   }
 }
 
-/* Make cursor stay normal*/
-
-body,
-button,
-div,
-span,
-a,
-img,
-svg,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-summary,
-input,
-textbox,
-input,
-textarea,
-li,
-ul {
-  font-family: "Nunito" !important;
-
-  @if $Is_Cursor_Active =="false" {
-    cursor: default !important;
-  }
-
-  // I assume here are more properties not only cursor...
-}
-
-.cooked img:not(.thumbnail):not(.emoji),
-.d-editor-preview img:not(.thumbnail):not(.emoji) {
-  border-radius: 8px;
-}
-
-aside.quote .title {
-  border-radius: 8px;
-}
 
