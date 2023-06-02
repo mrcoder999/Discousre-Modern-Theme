@@ -332,14 +332,6 @@ pre code {
   background-color: #67ffb2;
 }
 
-.user-card {
-  .badge-section {
-    .user-badge,
-    .more-user-badges a {
-      border-radius: 16px;
-    }
-  }
-}
 
 .modal-inner-container {
   border-radius: 9px;
@@ -930,14 +922,7 @@ svg.PixlzThemeSearchIcon {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   }
 
-  .user-card-container {
-    margin: 60px 20px;
-    width: 100%;
-    background-color: var(--secondary);
-    box-shadow: none;
-    margin-bottom: auto;
-  }
-
+ 
 
 
   .usercard-controls {
