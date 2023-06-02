@@ -332,7 +332,14 @@ pre code {
   background-color: #67ffb2;
 }
 
-
+.user-card {
+  .badge-section {
+    .user-badge,
+    .more-user-badges a {
+      border-radius: 16px;
+    }
+  }
+}
 
 .modal-inner-container {
   border-radius: 9px;
@@ -931,7 +938,17 @@ svg.PixlzThemeSearchIcon {
     margin-bottom: auto;
   }
 
+  .user-card {
+    z-index: auto;
+    position: relative;
+    width: 100%;
+    box-shadow: none;
+    margin: 0;
 
+    .badge-section {
+      overflow: hidden;
+    }
+  }
 
   .usercard-controls {
     display: none;
