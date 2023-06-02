@@ -295,19 +295,7 @@ pre code {
   background-color: #0f0f0f !important;
 }
 
-/* Fix the glitchy af badges */
-.user-card .badge-section {
-  border-radius: 8px;
 
-  .user-card-badge-link,
-  .more-user-badges {
-    border: 0px;
-    border-top-right-radius: 16px;
-    border-top-left-radius: 16px;
-    border-bottom-right-radius: 8px;
-    border-bottom-left-radius: 8px;
-  }
-}
 
 .badge-wrapper.box {
   border-radius: 0.25em;
@@ -341,15 +329,7 @@ pre code {
   background-color: #67ffb2;
 }
 
-.user-card {
-  .badge-section {
 
-    .user-badge,
-    .more-user-badges a {
-      border-radius: 16px;
-    }
-  }
-}
 
 .modal-inner-container {
   border-radius: 9px;
@@ -408,12 +388,7 @@ div.ac-wrap {
   border-radius: 8px !important;
 }
 
-.badge-card,
-.reviewable-filters,
-.user-card.show,
-.group-card.show {
-  border-radius: 14px;
-}
+
 
 .list-controls .combo-box .combo-box-header {
   border: none;
@@ -497,15 +472,7 @@ div.ac-wrap {
   -webkit-backdrop-filter: blur(10rem);
 }
 
-.user-card.show,
-.group-card.show,
-.user-card .card-content,
-.group-card .card-content {
-  border-radius: 12px;
-  background-color: rgba(36, 36, 36, 0.21);
-  backdrop-filter: blur(2rem);
-  -webkit-backdrop-filter: blur(2rem);
-}
+
 
 .menu-panel {
 
@@ -1634,12 +1601,6 @@ div.login-required {
   border-radius: 18px;
 }
 
-.user-card.show,
-.group-card.show,
-.user-card .card-content,
-.group-card .card-content {
-  left: 0px !important;
-}
 
 .select-kit.is-expanded .select-kit-body {
   position: absolute !important
