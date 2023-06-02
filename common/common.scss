@@ -1,17 +1,18 @@
 // DarkPixlz 2022-2023
 
-@import url("https://fonts.googleapis.com/css?family=Nunito");
+
+@import url('https://fonts.googleapis.com/css?family=Nunito');
 
 body {
-  @if $Background_Type == "tile" {
-    background-image: linear-gradient(
-        0deg,
+  @if $Background_Type =="tile" {
+    background-image: linear-gradient(0deg,
         rgba(var(--secondary-rgb), 1) 0%,
-        rgba(var(--secondary-rgb), 0.75) 100%
-      ),
+        rgba(var(--secondary-rgb), 0.75) 100%),
       url($Background_Image);
     background-size: $Tile_Size;
-  } @else {
+  }
+
+  @else {
     background-image: url($Background_Image) !important;
     background-size: cover;
   }
@@ -22,11 +23,11 @@ body {
 
 div#main-outlet.wrap.not-found-container,
 #main-outlet-wrapper {
+
   #main-outlet,
   .sidebar-wrapper {
-    @if $Is_Background_Blurred == "true" {
+    @if $Is_Background_Blurred {
       backdrop-filter: blur(3rem) !important;
-      -webkit-backdrop-filter: blur(3rem);
       background-color: #0a0a0aa6 !important;
 
       input[type],
@@ -35,7 +36,9 @@ div#main-outlet.wrap.not-found-container,
       div.ac-wrap {
         background: transparent;
       }
-    } @else {
+    }
+
+    @else {
       backdrop-filter: none !important;
       background-color: var(--secondary) !important;
 
@@ -50,9 +53,8 @@ div#main-outlet.wrap.not-found-container,
 }
 
 #main-outlet {
-  @if $Is_Background_Blurred == "true" {
+  @if $Is_Background_Blurred {
     backdrop-filter: blur(3rem) !important;
-    -webkit-backdrop-filter: blur(3rem);
     background-color: #0a0a0aa6 !important;
 
     input[type],
@@ -61,7 +63,9 @@ div#main-outlet.wrap.not-found-container,
     div.ac-wrap {
       background: transparent;
     }
-  } @else {
+  }
+
+  @else {
     backdrop-filter: none !important;
     background-color: var(--secondary) !important;
 
@@ -74,8 +78,10 @@ div#main-outlet.wrap.not-found-container,
   }
 }
 
+
+
 .wizard-container {
-  @if $Is_Background_Blurred == "true" {
+  @if $Is_Background_Blurred {
     background-color: #131313a3;
 
     input[type],
@@ -87,16 +93,17 @@ div#main-outlet.wrap.not-found-container,
   }
 }
 
+
 body.wizard {
-  @if $Background_Type == "tile" {
-    background-image: linear-gradient(
-        0deg,
+  @if $Background_Type =="tile" {
+    background-image: linear-gradient(0deg,
         rgba(var(--secondary-rgb), 1) 0%,
-        rgba(var(--secondary-rgb), 0.75) 100%
-      ),
+        rgba(var(--secondary-rgb), 0.75) 100%),
       url($Background_Image);
     background-size: $Tile_Size;
-  } @else {
+  }
+
+  @else {
     background-image: url($Background_Image) !important;
     background-size: cover;
   }
@@ -127,9 +134,11 @@ li,
 ul {
   font-family: "Nunito" !important;
 
-  @if $Is_Cursor_Active == "false" {
+  @if $Is_Cursor_Active =="false" {
     cursor: default !important;
   }
+
+  // I assume here are more properties not only cursor...
 }
 
 .cooked img:not(.thumbnail):not(.emoji),
@@ -141,12 +150,12 @@ aside.quote .title {
   border-radius: 8px;
 }
 
-// Make Like button white 
+/* Make Like button white */
 nav.post-controls .actions .double-button button.has-like .d-icon {
   color: #fff;
 }
 
-// Search tweaks
+/* Search */
 .custom-search-banner-wrap {
   margin: 0 auto !important;
   max-width: unset;
@@ -221,13 +230,9 @@ pre code {
 }
 
 .d-header {
-  background-image: linear-gradient(
-    $Header_Direction,
-    $Header_Color_1,
-    $Header_Color_2,
-    $Header_Color_3
-  );
+  background-image: linear-gradient($Header_Direction, $Header_Color_1, $Header_Color_2, $Header_Color_3);
   background-repeat: no-repeat;
+  border-radius: 0px 0px 8px 8px;
 }
 
 .search-input {
@@ -252,6 +257,7 @@ pre code {
 }
 
 .topic-list {
+
   .topic-list-header,
   .topic-list-item {
     .topic-list-data {
@@ -261,6 +267,7 @@ pre code {
 }
 
 .navigation-topics .topic-list {
+
   .topic-list-header,
   .topic-list-body {
     .topic-list-data {
@@ -275,6 +282,8 @@ pre code {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0) !important;
   // backdrop-filter: blur(1rem);
   top: 4px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
 .category-list.with-topics .category {
@@ -314,7 +323,7 @@ pre code {
   border-bottom-left-radius: 0.125em;
 }
 
-.badge-wrapper.bullet .badge-category-parent-bg + .badge-category-bg {
+.badge-wrapper.bullet .badge-category-parent-bg+.badge-category-bg {
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
   border-top-right-radius: 0.125em;
@@ -334,6 +343,7 @@ pre code {
 
 .user-card {
   .badge-section {
+
     .user-badge,
     .more-user-badges a {
       border-radius: 16px;
@@ -370,6 +380,7 @@ pre code {
 .topic-list {
   .link-bottom-line {
     .discourse-tag {
+
       &.simple:after,
       &.discourse-tag.box {
         margin-right: 0px;
@@ -411,6 +422,8 @@ div.ac-wrap {
 
 .d-header {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  margin-top: 5px;
+  border-radius: 12px 12px 12px 12px;
 }
 
 .d-header-icons {
@@ -427,7 +440,7 @@ div.ac-wrap {
       }
 
       img.avatar {
-        border-radius: 0.5em !important;
+        border-radius: 0.50em !important;
       }
     }
   }
@@ -459,8 +472,9 @@ div.ac-wrap {
 .topic-chat-drawer-header,
 .topic-chat-drawer-content,
 .topic-chat-container {
-  backdrop-filter: blur(2rem);
+  backdrop-filter: blur(2rem)
 }
+
 
 .chat-message {
   background: transparent;
@@ -471,7 +485,7 @@ div.ac-wrap {
 }
 
 .topic-chat-drawer-header {
-  border-radius: 18px 18px 0px 0px;
+  border-radius: 18px 18px 0px 0px
 }
 
 .chat-composer-dropdown__list,
@@ -494,8 +508,10 @@ div.ac-wrap {
 }
 
 .menu-panel {
+
   .widget-link,
   .categories-link {
+
     &:hover,
     &:focus {
       background-color: rgba(var(--tertiary-rgb), 0.5);
@@ -503,27 +519,10 @@ div.ac-wrap {
   }
 }
 
-// BUTTON BORDER RADIUS
-
 .btn:not(.themes-tab):not(.components-tab),
-.select-kit.dropdown-select-box .dropdown-select-box-header,
-.nav-pills > li a.active,
-.nav-pills > li > a {
-  border-radius: 16px;
+.select-kit.dropdown-select-box .dropdown-select-box-header {
+  border-radius: 8px;
   border: 1px solid transparent;
-}
-
-.btn:hover:not(.btn-disabled) {
-  border-radius: 8px !important;
-}
-
-// Hover border radius
-.user,
-.notification,
-.user-menu.revamped #quick-access-profile li > * {
-  :hover {
-    border-radius: 8px !important;
-  }
 }
 
 .post-admin-menu.popup-menu .btn.widget-button {
@@ -553,11 +552,9 @@ div.ac-wrap {
   left: 0;
   height: 100vh;
   width: 100vw;
-  background: linear-gradient(
-    90deg,
-    var(--tertiary-hover) 0%,
-    var(--tertiary) 100%
-  );
+  background: linear-gradient(90deg,
+      var(--tertiary-hover) 0%,
+      var(--tertiary) 100%);
   clip-path: ellipse(148% 70% at 91% -14%);
 }
 
@@ -592,8 +589,8 @@ body.archetype-regular #main-outlet {
   min-height: 500px;
 }
 
-.nav-pills > li a.active,
-.nav-pills > li > a {
+.nav-pills>li a.active,
+.nav-pills>li>a {
   border-radius: 0.5em;
 }
 
@@ -868,11 +865,9 @@ svg.PixlzThemeSearchIcon {
 
 .published-page {
   &::before {
-    background: linear-gradient(
-      90deg,
-      var(--tertiary-hover) 0%,
-      var(--tertiary) 100%
-    );
+    background: linear-gradient(90deg,
+        var(--tertiary-hover) 0%,
+        var(--tertiary) 100%);
     clip-path: ellipse(148% 70% at 91% -14%);
     content: "";
     width: 100%;
@@ -906,7 +901,7 @@ svg.PixlzThemeSearchIcon {
     justify-content: space-between;
     flex-wrap: wrap;
 
-    > span {
+    >span {
       margin-bottom: 5px;
     }
   }
@@ -1014,7 +1009,7 @@ discourse you really gotta fix your search system
     }
 
     .search-advanced-filters .search-advanced-options,
-    details.search-advanced-additional-options > summary {
+    details.search-advanced-additional-options>summary {
       background-color: transparent;
     }
   }
@@ -1080,8 +1075,8 @@ body:not(.ios-safari-composer-hacks) #reply-control.open,
 
 .menu-panel.drop-down {
   background-color: rgba(0, 15, 255, 0);
-  backdrop-filter: blur(2rem);
   -webkit-backdrop-filter: blur(2rem);
+  backdrop-filter: blur(2rem);
 }
 
 #reply-control .mini-tag-chooser .select-kit-header {
@@ -1150,6 +1145,7 @@ a.mention {
 }
 
 div.poll .results {
+
   .chosen .bar,
   .bar-back {
     border-radius: 8px;
@@ -1206,9 +1202,6 @@ blockquote {
 // Goodbye button gradient
 
 .btn {
-  :hover {
-    border-radius: 8px !important;
-  }
 
   &:active,
   &.btn-active {
@@ -1218,6 +1211,7 @@ blockquote {
   }
 
   &.btn-primary {
+
     &:active,
     &.btn-active {
       background-color: var(--tertiary-hover);
@@ -1226,6 +1220,7 @@ blockquote {
 
   &.btn-danger,
   &.cancel {
+
     &:active,
     &.btn-active {
       background-color: var(--danger-hover);
@@ -1233,6 +1228,7 @@ blockquote {
   }
 
   &.ok {
+
     &:active,
     &.btn-active {
       background-color: var(--success-hover);
@@ -1251,10 +1247,7 @@ blockquote {
   align-items: center;
   display: flex;
   width: 100%;
-  max-width: calc(
-    #{$topic-body-width} + (#{$topic-body-width-padding} * 2) + #{$topic-avatar-width} -
-      (0.8em * 2)
-  );
+  max-width: calc(#{$topic-body-width} + (#{$topic-body-width-padding} * 2) + #{$topic-avatar-width} - (0.8em * 2));
   border-radius: 20px;
 
   &.old {
@@ -1289,6 +1282,7 @@ blockquote {
   text-align: center;
 }
 
+// scss goes brrrr
 .dashboard {
   .navigation {
     .navigation-item {
@@ -1364,25 +1358,19 @@ nav.post-controls .actions .double-button button.button-count:not(.my-likes) {
   padding-top: 15px;
 }
 
-.fixed-modal:not(.history-modal)
-  .modal-body:not(.reorder-categories):not(.poll-ui-builder):not(
-    .poll-breakdown
-  ) {
+.fixed-modal:not(.history-modal) .modal-body:not(.reorder-categories):not(.poll-ui-builder):not(.poll-breakdown) {
   border-radius: 18px;
 }
 
-// code now, reformat later
-@if $Staff_tag == "true" {
-  span.staff :after {
-    content: "Staff";
-    color: white;
-    background-color: #00a9db;
-    border-radius: 8px;
-    margin-left: 5px;
-    padding-left: 4px;
-    padding-right: 4px;
-    display: inline-block;
-  }
+span.staff :after {
+  content: "Staff";
+  color: white;
+  background-color: #00a9db;
+  border-radius: 8px;
+  margin-left: 5px;
+  padding-left: 4px;
+  padding-right: 4px;
+  display: inline-block;
 }
 
 .topic-avatar .avatar-flair.rounded,
@@ -1403,9 +1391,9 @@ nav.post-controls .actions .double-button button.button-count:not(.my-likes) {
 // Sidebar highlight
 .sidebar-section-link-wrapper {
   .sidebar-section-link.active {
-    @if $Is_Background_Blurred == "true" {
+    @if $Is_Background_Blurred {
       backdrop-filter: blur(1rem);
-      background-color: #0e2e86a6;
+      background-color: #074854a6;
     }
   }
 }
@@ -1466,10 +1454,11 @@ nav.post-controls .actions .double-button button.button-count:not(.my-likes) {
   border: none;
 }
 
-.nav-pills > li > a,
-.nav-pills > li button {
+.nav-pills>li>a,
+.nav-pills>li button {
   padding: 10px;
 }
+
 
 th.views.sortable.num.topic-list-data {
   display: none;
@@ -1504,14 +1493,15 @@ div.edit-category {
 
 .welcome-cta {
   border-radius: 16px;
-  background-color: rgba(var(--primary-low-rgb), 0.4);
+  background-color: rgba(var(--primary-low-rgb), .4);
   backdrop-filter: blur(2rem);
 }
+
 
 .composer-popup {
   border-radius: 8px;
   backdrop-filter: blur(1rem);
-  background-color: rgba(var(--primary-low-rgb), 0.4);
+  background-color: rgba(var(--primary-low-rgb), 0.4)
 }
 
 .user-preferences .bio-composer .d-editor-preview,
@@ -1526,6 +1516,7 @@ div.edit-category {
   border-radius: 8px;
 }
 
+
 .wizard-container__button {
   border-radius: 8px;
 }
@@ -1538,11 +1529,7 @@ div.edit-category {
   border-radius: 18px;
 }
 
-.floating-search-input
-  .search-banner-inner.wrap
-  .search-menu
-  .search-input
-  #search-term {
+.floating-search-input .search-banner-inner.wrap .search-menu .search-input #search-term {
   background: transparent;
   border: none;
 }
@@ -1566,7 +1553,7 @@ div.edit-category {
 
 .user-main .staff-counters {
   border-radius: 8px 8px 0px 0px;
-  background-color: var(--primary-very-low);
+  background-color: var(--primary-very-low)
 }
 
 .topic-chat-container {
@@ -1577,12 +1564,7 @@ div.edit-category {
   border-radius: 8px;
 }
 
-.floating-search-input
-  .search-banner-inner.wrap
-  .search-menu
-  .results
-  ul.list
-  li,
+.floating-search-input .search-banner-inner.wrap .search-menu .results ul.list li,
 .floating-search-input .search-banner-inner.wrap .search-menu .results ul li,
 .search-menu .search-result-topic .search-link,
 .search-menu .search-result-post .search-link {
@@ -1596,8 +1578,8 @@ div.edit-category {
   border-radius: 18px;
 }
 
-.deleted .regular > .cooked,
-.regular > .cooked {
+.deleted .regular>.cooked,
+.regular>.cooked {
   border-radius: 8px;
 }
 
@@ -1634,7 +1616,7 @@ div.login-required {
   content: " ";
   font-size: 10em;
   background-image: url("/images/emoji/twitter/wave.png?v=12");
-  background-repeat: no-repeat;
+  background-repeat: no-repeat
 }
 
 .chat-message-collapser .chat-video-upload {
@@ -1660,10 +1642,10 @@ div.login-required {
   background: #0a0a0a8f;
   backdrop-filter: blur(2rem);
   -webkit-backdrop-filter: blur(2rem);
+
 }
 
-.select-kit.single-select.dropdown-select-box.is-expanded
-  .select-kit-collection,
+.select-kit.single-select.dropdown-select-box.is-expanded .select-kit-collection,
 .select-kit.single-select.dropdown-select-box.is-expanded .select-kit-body {
   border-radius: 18px;
 }
@@ -1676,7 +1658,7 @@ div.login-required {
 }
 
 .select-kit.is-expanded .select-kit-body {
-  position: absolute !important;
+  position: absolute !important
 }
 
 .user-content {
@@ -1685,347 +1667,14 @@ div.login-required {
 
 .new-user-wrapper .user-navigation .nav-pills li a.active,
 .new-user-wrapper .user-navigation .nav-pills li {
-  border-radius: 0px !important;
+  border-radius: 0px !important
 }
 
 .composer-popup.education-message {
-  background: rgba(var(--tertiary-rgb), 0.3);
+  background: rgba(var(--tertiary-rgb), .3);
 }
 
 .static-progress-bar .progress-bar-background,
 .static-progress-bar .progress-bar-background .progress-bar {
   border-radius: 8px;
-}
-
-.discourse-no-touch .sortable:hover,
-.discourse-no-touch .sortable:focus {
-  background-color: transparent !important;
-}
-
-.full-width .contents .topic-list .topic-list-body .topic-list-item {
-  background-color: rgba(var(--secondary-rgb), 0.4);
-}
-
-.alert-bootstrap-mode .col-button .alert--link {
-  min-width: 150px;
-}
-
-.btn-primary.bootstrap-invite-button.btn.btn-icon-text {
-  min-width: 127px;
-}
-
-@if $Full_Width == "true" {
-  :root {
-    --d-max-width: 95%;
-  }
-
-  #main-outlet-wrapper .sidebar-wrapper {
-    left: 10px;
-  }
-
-  #main-outlet {
-    width: 90%;
-    max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5px;
-    margin-bottom: 50px;
-  }
-
-  // support for topics
-  .post-stream,
-  .small-action .small-action-desc {
-    // not sure why actions are different from post-stream?
-    width: 100%;
-  }
-
-  .topic-body {
-    width: 100%;
-  }
-}
-
-// New User Card support, may break old one??
-
-.d-user-card__main-content {
-  background-color: rgba(var(--secondary-rgb), 0.4);
-  backdrop-filter: blur(3rem);
-}
-
-.d-user-card__button.btn-default.btn.btn-icon-text,
-.d-user-card__field,
-.user-card-metadata-outlet {
-  background-color: rgba(var(--primary-low-rgb), 0.5);
-  border-radius: 8px;
-}
-
-.d-user-card__field,
-.user-card-metadata-outlet {
-  // Revert to the arguably better version which was removed earlier in development
-  margin-right: 10px;
-}
-
-.d-user-card__relative-time {
-  backdrop-filter: blur(2rem);
-}
-
-.d-user-card__badges-more,
-.d-user-card__badges .user-card-badge-link {
-  background-color: rgba(var(--secondary-rgb), 0.6);
-  backdrop-filter: blur(2rem);
-}
-
-aside.quote .title {
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-}
-
-.btn:not(.themes-tab):not(.components-tab),
-.select-kit.dropdown-select-box .dropdown-select-box-header {
-  border: none;
-}
-
-// Remove image rounding
-
-@if $Disable_Image_Rounding == "true" {
-  img {
-    border-radius: 0px !important;
-  }
-}
-
-.d-header {
-  @if $Blur_Header_Background == "true" {
-    background: rgba(var(--primary-low-rgb), 0.6);
-    backdrop-filter: blur(2rem);
-  }
-}
-
-.d-user-card__main-content {
-  border-radius: 18px;
-}
-
-.user-content-wrapper .user-content,
-.user-main .about.has-background .details:not(.collapsed-info) {
-  border-radius: 0px 0px 18px 18px;
-  padding: 15px;
-  background-image: var(--profile-bg-img);
-  background-position: bottom;
-}
-
-.user-main {
-  .about.has-background .user-profile-image {
-    border-radius: 18px 18px 0px 0px;
-  }
-
-  .about {
-    .details .primary:not(.collapsed-info),
-    .user-main .about .secondary {
-      z-index: 50;
-      backdrop-filter: blur(2rem);
-      border-radius: 8px;
-      padding: 5px;
-    }
-
-    .secondary {
-      margin-top: 10px;
-      border: none;
-    }
-  }
-}
-
-.user-main .about.collapsed-info .details {
-  border-radius: 18px !important;
-  border-bottom: none;
-}
-
-.secondary {
-  margin-top: 10px;
-  border: none;
-}
-
-.topic-error {
-  font-size: 20px;
-}
-
-.widget-link.topic-link {
-  text-align: initial; // fixed the issue where sometimes the header text would break and be centered
-}
-
-.onebox.discoursetopic {
-  border-radius: 12px;
-}
-
-.d-header #site-logo {
-  border-radius: 8px;
-}
-
-.widget-button.btn-flat.toggle-like.has-like.fade-out.no-text.btn-icon {
-  border-radius: 0px 8px 8px 0px; // make it so it fits in with the text, which is rounded on one side as well
-}
-
-section.tag-info {
-  border-radius: 18px;
-  background-color: rgba(var(--secondary-rgb), 0.4);
-}
-
-.profiler-results .profiler-popup {
-  background-color: rgba(var(--secondary-rgb), 0.6);
-  backdrop-filter: blur(2rem);
-  border-radius: 18px;
-  border: 1px solid #262626;
-  color: #d5d5d5;
-}
-
-.profiler-result {
-  .profiler-timings th,
-  .profiler-label {
-    background-color: #0000;
-    color: #cacaca;
-  }
-}
-
-.profiler-results.profiler-right.profiler-top {
-  border-radius: 18px 0px 0px 18px;
-  background-color: #1e1e1e;
-}
-
-div.profiler-results.profiler-top .profiler-button {
-  background-color: none;
-  border: none;
-}
-
-.docker-manager .progress-bar {
-  border-radius: 8px;
-}
-
-.docker-manager .progress-bar-inner {
-  border-radius: 8px 0px 0px 8px;
-}
-
-.docker-manager .console-logs {
-  border-radius: 18px;
-}
-
-.nav-pills > li a.active,
-.nav-pills > li button.active {
-  background: var(--d-hover);
-}
-
-.nav-pills > li a.active,
-.nav-pills > li > a {
-  margin-right: 8px;
-}
-
-.nav-pills > li > a:hover,
-.nav-pills > li button:hover {
-  background: var(--d-hover);
-  color: var(--header_primary);
-}
-
-.themes-tab.tab.active.btn.btn-text {
-  border-radius: 8px 0px 0px 0px !important;
-}
-
-.components-tab.tab.btn.btn-icon-text {
-  border-radius: 0px 8px 0px 0px !important;
-}
-
-.admin-customize .themes-list-container .themes-list-item:last-child,
-.admin-customize .themes-list-container {
-  border-radius: 0px 0px 8px 8px;
-}
-
-.ace.ace_editor.ace-chaos.ace_dark {
-  border-radius: 8px;
-  margin-top: 10px;
-}
-
-@if $Centered_Topbar == "true" {
-  .d-header-wrap {
-    top: 5px;
-    text-align: center;
-    display: block;
-    margin: auto;
-    width: 95%;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    margin-top: 5px;
-    border-radius: 18px;
-  }
-
-  .d-header {
-    border-radius: 18px;
-  }
-}
-
-.nav-pills > li a.active {
-  color: var(--primary) !important;
-}
-
-.dashboard .navigation .navigation-item,
-.dashboard-next .navigation .navigation-item {
-  border-radius: 8px 8px 0px 0px;
-}
-
-.user-main .about .secondary {
-  backdrop-filter: blur(2rem);
-  padding: 3px;
-  border-radius: 8px;
-}
-
-.alert.alert-error.report-alert.rate-limited {
-  background-color: transparent !important;
-}
-
-.collapsed-info .details {
-  height: 25% !important;
-}
-
-// Make styleguide more accurate to the final theme
-.styleguide pre,
-.styleguide--char-counter {
-  border-radius: 18px;
-}
-
-.create-invite-modal.modal .modal-body,
-.create-invite-bulk-modal.modal .modal-body,
-.share-topic-modal.modal .modal-body {
-  border-radius: 0px;
-}
-
-.topic-body.clearfix {
-  background-color: transparent !important;
-  border-radius: 18px;
-}
-
-.topic-avatar {
-  border: none;
-}
-
-.topic-post article.boxed {
-  border-radius: 18px;
-  border: 3px solid var(--d-hover);
-  padding: 5px;
-}
-
-.modal-inner-container {
-  min-width: 600px;
-}
-
-.reorder-categories table {
-  width: 100%;
-}
-
-.btn-flat.modal-close.close.btn.no-text.btn-icon {
-  background: var(--primary-100);
-  padding: 10px;
-  transition: all 0.25;
-}
-
-.btn-flat.modal-close.close.btn.no-text.btn-icon::after {
-  content: " Cancel";
-  font-size: 18px;
-}
-
-button, a {
-  transition: all 0.25 !important;
 }
